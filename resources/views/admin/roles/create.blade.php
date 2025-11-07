@@ -11,5 +11,20 @@
           'name' => 'Nuevo'
         ],
     ]">
+    <x-wire-card>
+      <form action="{{route('admin.roles.store')}}" method = "POST">
+        @csrf
+
+        <x-wire-input
+          label="Nombre del rol"
+          name="name"
+          placeholder="Ingrese el nombre del rol"
+          value="{{old('name')}}">
+        </x-wire-input>
+        <div class ="flex justify-end mt-4">
+          <x-wire-button type="submit" blue>Guardar rol</x-wire-button>
+          </div>
+      </form>
+    </x-wire-card>
 
 </x-admin-layout>
